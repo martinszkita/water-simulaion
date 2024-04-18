@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "ball.h"
 #include "particle.h"
 
 #include <QApplication>
@@ -31,6 +30,8 @@ int main(int argc, char *argv[])
 
     QGraphicsView view(&scene);
     view.show();
+
+    particle->move();
 
     return a.exec();
 }
