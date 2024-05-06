@@ -5,19 +5,23 @@
 #include <QWidget>
 #include <QGraphicsItem>
 
-class Particle : public QGraphicsItem
+class Particle : public QObject, public QGraphicsItem
 {
+    Q_OBJECT
 private:
-    int pos_x;
-    int pos_y;
-    int h_x= 15;
-    int h_y= 15;
+    QPointF position;
+    QPointF velocity;
+    QColor kolor;
+    int r = 5;
 public:
-    Particle();
+    Particle(const Particle &other);
+    Particle(QPointF);
+    Particle & operator=(const Particle &other);
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     virtual QRectF boundingRect() const override;
+    void resolve_collisions();
+public slots:
     void move();
-
 
 };
 
