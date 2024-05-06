@@ -10,33 +10,25 @@
 #include <QPointF>
 
 float gravity = 0.2;
-float collision_factor = 1;
+float collision_factor = 0.9;
+int fps = 60;
 
-Particle::Particle(const Particle &other): QGraphicsItem(), QObject()
-{
-
-    this->position= other.position;
-    this->velocity = other.velocity;
-    this->r= other.r;
-
-}
 
 Particle::Particle(QPointF pos): position(pos)
 {
     QTimer * timer = new QTimer();
-    this->kolor = QColor(rand()%255,rand()%255,rand()%255);
+    this->kolor = QColor(Qt::red);
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
-    timer->start(16);
-
+    timer->start(1000/fps);
 }
 void Particle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
+
     QPen pen;
     pen.setWidth(2);
     pen.setColor(this->kolor);
     painter->setPen(pen);
     painter->setBrush(this->kolor); // wypelnienie
-    painter->drawEllipse(position,2*r,2*r);
-
+    painter->drawEllipse(position,r,r);
 }
 
 QRectF Particle::boundingRect() const
@@ -62,10 +54,13 @@ void Particle::resolve_collisions(){
         position.ry() = 0;
     }
     // dol
-    else if (position.ry() + 2*r > scene()->height()){
+    else if (position.ry() + r > scene()->height()/2){
         velocity.ry() *= -1 * collision_factor;
-        position.ry() = scene()->height() - 2*r;
+        position.ry() = scene()->height()/2 - r;
+        qInfo() << "odbicie na y:" << position.ry();
+        qInfo() << "v:" <<velocity.ry();
     }
+
 
 }
 
@@ -79,6 +74,5 @@ void Particle::move()
 
     scene()->update();
 
-    // qInfo() << "y: "<<position.ry();
-    //   qInfo() << "v:" <<velocity.ry();
+    qInfo() << "y: "<<position.ry() <<" v:" <<velocity.ry();
 }

@@ -9,12 +9,11 @@ class Particle : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 private:
-    QPointF position;
+    QPointF position; // pozycja srodka
     QPointF velocity;
     QColor kolor;
     int r = 5;
 public:
-    Particle(const Particle &other);
     Particle(QPointF);
     Particle & operator=(const Particle &other);
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
