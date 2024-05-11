@@ -1,0 +1,32 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QGraphicsScene>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QGraphicsView>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }\mbox{\hyperlink{classMainWindow}{MainWindow}}; \}}
+\DoxyCodeLine{10 QT\_END\_NAMESPACE}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classMainWindow}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     Q\_OBJECT}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{classMainWindow}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{18     \mbox{\hyperlink{classMainWindow}{\string~MainWindow}}();}
+\DoxyCodeLine{19 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} resizeEvent(QResizeEvent * event) \textcolor{keyword}{override};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} on\_resizeEvent(QResizeEvent * event);}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     Ui::MainWindow *ui;}
+\DoxyCodeLine{24     QGraphicsScene * scene;}
+\DoxyCodeLine{25     QGraphicsView * view;}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,92 @@
+\hypertarget{classParticle}{}\doxysection{Particle Class Reference}
+\label{classParticle}\index{Particle@{Particle}}
+
+
+The \mbox{\hyperlink{classParticle}{Particle}} class.  
+
+
+
+
+{\ttfamily \#include $<$particle.\+h$>$}
+
+
+
+Inheritance diagram for Particle\+:
+% FIG 0
+
+
+Collaboration diagram for Particle\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}\label{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}} 
+void {\bfseries move} ()
+\item 
+\mbox{\Hypertarget{classParticle_ac43ad60c638641df25e492c00588d6ed}\label{classParticle_ac43ad60c638641df25e492c00588d6ed}} 
+void {\bfseries switch\+\_\+timer} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticle_a7e99201c7a77bf9ba10a9b88cc5d07fb}\label{classParticle_a7e99201c7a77bf9ba10a9b88cc5d07fb}} 
+void {\bfseries space\+\_\+pressed} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParticle_ab08ecf3b3688249965cc33731e06bdad}{Particle}} (QPointF)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classParticle_ab08ecf3b3688249965cc33731e06bdad}{Particle\+::\+Particle}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0}\label{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0}} 
+\mbox{\hyperlink{classParticle}{Particle}} \& {\bfseries operator=} (const \mbox{\hyperlink{classParticle}{Particle}} \&other)
+\item 
+\mbox{\Hypertarget{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}\label{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}} 
+virtual void {\bfseries paint} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) override
+\item 
+\mbox{\Hypertarget{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}\label{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}} 
+virtual QRectF {\bfseries bounding\+Rect} () const override
+\item 
+\mbox{\Hypertarget{classParticle_a1ce191d4f4c9104055905402a3b1692e}\label{classParticle_a1ce191d4f4c9104055905402a3b1692e}} 
+void {\bfseries resolve\+\_\+collisions} ()
+\item 
+\mbox{\Hypertarget{classParticle_a22276a917b4627bfb6181af121ca02ec}\label{classParticle_a22276a917b4627bfb6181af121ca02ec}} 
+void {\bfseries display\+\_\+state} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticle_a7913ec0f59d0215f427ee869816cc390}\label{classParticle_a7913ec0f59d0215f427ee869816cc390}} 
+void {\bfseries key\+\_\+pressed} (QKey\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classParticle}{Particle}} class. 
+
+Represents an object used to simulate fluid. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParticle_ab08ecf3b3688249965cc33731e06bdad}\label{classParticle_ab08ecf3b3688249965cc33731e06bdad}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{QPointF}]{pos }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classParticle_ab08ecf3b3688249965cc33731e06bdad}{Particle\+::\+Particle}}. 
+
+\mbox{\hyperlink{classParticle}{Particle}} class constructor. 
+\begin{DoxyParams}{Parameters}
+{\em param1} & QPointF pos (qreal,qreal)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classParticle}{Particle}} class object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+particle.\+h\item 
+particle.\+cpp\end{DoxyCompactItemize}

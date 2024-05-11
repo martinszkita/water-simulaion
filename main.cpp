@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "particle.h"
-
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -17,7 +16,7 @@ int main(int argc, char *argv[])
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
         const QString baseName = "liquid-simulation_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
+        if (translator.load(":i18n/" + baseName)) {
             a.installTranslator(&translator);
             break;
         }
