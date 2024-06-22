@@ -19,12 +19,12 @@ private:
     QPointF position; ///< (x,y) position of the middle of the particle
     QPointF velocity; ///< (x,y) velocity of the middle of the particle
     QColor kolor; ///< color of the particle
-    QTimer * timer1; ///< timer to refresh particle's parameters every quant of time
+    //QTimer * timer1; ///< timer to refresh particle's parameters every quant of time
     int r; ///< particle's radius
     int id;
 public:
     Particle();
-    Particle(const Particle & other);
+    //Particle(const Particle && other)noexcept;
     Particle(QPointF);
     Particle & operator=(const Particle & other);
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
@@ -47,9 +47,6 @@ public:
 
 public slots:
     void move();
-
-protected:
-    void key_pressed(QKeyEvent * event);
 };
 
 #endif // PARTICLE_H

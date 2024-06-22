@@ -6,11 +6,10 @@
 #include <QPointF>
 #include <random>
 #include "liquidsimulation.h"
+#include <QSerialPort>
 
 qreal screen_width = 800; ///< sets up the width of the screen
 qreal screen_height = 600; ///< sets up the height of the screen
-int _number_of_particles = 100; ///< sets up the number of particles in the simulation
-int r = 5; ///< particle's radius
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,20 +18,29 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // ui->progressBar->setValue(50);
+    // ui->progressBar->setMinimum(0);
+    // ui->progressBar->setMaximum(100);
+    // // connect(timer,SIGNAL(timeout()),this,SLOT(resolve_particle_collisions()));
+    // connect(this->progressBar, SIGNAL(valueChanged()),this,SLOT(on_progressBar_valueChanged()));
+
     scene = new QGraphicsScene();
+
     scene->setSceneRect(0,0,screen_height,screen_width); // poczatek_x , poczatek_y , w ,h
 
     view = new QGraphicsView(scene);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setStatusBar(nullptr); // remove bottom bar
+    //setStatusBar(nullptr); // remove bottom bar
 
-    simulation = new LiquidSimulation();
+    liqud_simulation = new LiquidSimulation();
 
     ///< add all the simulation particles to the scene
-    for(auto & particle : simulation->particles){
+    for(auto & particle : liqud_simulation->getParticles()){
         scene->addItem(particle);
     }
+
+    //arduino = new  Arduino(this);
 
     setCentralWidget(view);
 }
@@ -47,7 +55,13 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     QMainWindow::resizeEvent(event);
 
     scene->setSceneRect(QRect(QPoint(0, 0), this->size()));
-    qInfo() << "resize";
-    qInfo() <<"height main window: "<< this->height();
+    // qInfo() << "resize";
+    // qInfo() <<"height main window: "<< this->height();
 }
+
+
+// void MainWindow::on_progressBar_valueChanged(int value)
+// {
+//     qInfo() << "progress bar";
+// }
 

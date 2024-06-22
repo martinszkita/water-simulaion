@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QProgressBar>
 #include "liquidsimulation.h"
+#include "arduino.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,10 +26,15 @@ public:
 protected:
     void resizeEvent(QResizeEvent * event) override;
     void on_resizeEvent(QResizeEvent * event);
+private slots:
+    //void on_progressBar_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene * scene;
     QGraphicsView * view;
-    LiquidSimulation * simulation;
+    LiquidSimulation * liqud_simulation;
+    //QProgressBar *progressBar;
+    Arduino * arduino;
 };
 #endif // MAINWINDOW_H
