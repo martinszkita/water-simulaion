@@ -9,8 +9,6 @@
 
 qreal screen_width = 800; ///< sets up the width of the screen
 qreal screen_height = 600; ///< sets up the height of the screen
-int _number_of_particles = 100; ///< sets up the number of particles in the simulation
-int r = 5; ///< particle's radius
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -35,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     setCentralWidget(view);
+
+    serialPort = new SerialPort();
 }
 
 MainWindow::~MainWindow()

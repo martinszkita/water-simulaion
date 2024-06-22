@@ -15,6 +15,7 @@ public:
     LiquidSimulation();
     ~LiquidSimulation();
     bool particles_collide(Particle & particle1, Particle & particle2);
+    bool particles_touch(const Particle& particle, const Particle& target);
 public slots:
     void resolve_particle_collisions();
 };

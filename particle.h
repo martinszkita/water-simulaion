@@ -44,6 +44,7 @@ public:
     void setVelocity(QPointF newVelocity);
     int getId() const;
     void setId(int newId);
+    void reverse_velocity();
 
 public slots:
     void move();

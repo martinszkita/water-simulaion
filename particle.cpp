@@ -6,19 +6,19 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QTimer>
-#include <random>
+#include <qrandom.h>
 #include <QPointF>
 #include <QKeyEvent>
 
 int fps = 60;
-int rr = 50;
-float collision_factor = 1;
+int rr = 30;
+float collision_factor = 0.9;
 qreal initial_pos_x = 10;
 qreal initial_pos_y = 0;
 qreal initial_vel_x = 0;
 qreal initial_vel_y = 1;
 qreal gravity_x = 0;
-qreal gravity_y = 0;
+qreal gravity_y = 1;
 QColor color = Qt::red;
 
 QPointF initial_velocity = QPointF(initial_vel_x,initial_vel_y);
@@ -67,19 +67,46 @@ void Particle::setId(int newId)
     id = newId;
 }
 
+void Particle::reverse_velocity()
+{
+    velocity.rx() *= -1;
+    velocity.ry() *= -1;
+}
+
+// Particle::Particle()
+// {
+//     this->kolor = color;
+//     this->r=rr;
+
+//     this->position=QPointF(rand() % 400  , rand() % 300  );
+//     this->velocity=QPointF((rand() % 10 ) - 10 , (rand() % 10 ) - 10 );
+
+//     ///< timer setup for moving particle
+//     timer1 = new QTimer();
+//     connect(timer1,SIGNAL(timeout()),this,SLOT(move()));
+//     timer1->start(1000/fps);
+// }
+
 Particle::Particle()
 {
+    qInfo() << "konstruktor bezparam";
     this->kolor = color;
     this->r=rr;
 
-    this->position=QPointF(rand() % 400  , rand() % 300  );
-    this->velocity=QPointF((rand() % 10 ) - 10 , (rand() % 10 ) - 10 );
+    if (scene()) {
+        qreal sceneWidth = scene()->width();
+        qreal sceneHeight = scene()->height();
 
-    ///< timer setup for moving particle
-    timer1 = new QTimer();
-    connect(timer1,SIGNAL(timeout()),this,SLOT(move()));
-    timer1->start(1000/fps);
+        this->velocity=initial_velocity;
+        this->position = QPointF((qreal)(QRandomGenerator::global()->bounded(sceneWidth) - 10),
+                                 (qreal)(QRandomGenerator::global()->bounded(sceneHeight) - 10));
+    }
 
+    else {
+        qInfo() << "scene null ptr";
+    }
+    qInfo() << "bez:" << position;
+    setPos(this->position);
 }
 
 Particle::Particle(const Particle &other)
@@ -146,30 +173,25 @@ void Particle::resolve_edge_collisions(){
     if (position.rx()   < r/2){
         velocity.rx() *= -1 * collision_factor;
         position.rx() = r/2;
-        qDebug() << "lewa sciana";
+        //qDebug() << "lewa sciana";
     }
     else if(position.rx()+r/2  >= scene()->width()/2){
         velocity.rx() *= -1*collision_factor;
         position.rx() = scene()->width()/2-r/2;
-        qDebug() << "prawa sciana";
+        //qDebug() << "prawa sciana";
     }
     if(position.ry() - r  <= 0){
         velocity.ry() *= -1 * collision_factor;
         position.ry() = r;
-        qDebug() << "gorna sciana";
+        //qDebug() << "gorna sciana";
     }
     else if (position.ry() +r > scene()->height()/2){
         velocity.ry() *= -1 * collision_factor;
         position.ry() = scene()->height()/2-r;
-        qDebug() << "dolna sciana";
+        //qDebug() << "dolna sciana";
     }
 }
 
-//bool Particle::particles_touch(Particle &other)
-//{
-//    qInfo() << "zderzenie";
-//    return (this->position.rx() - other.position.rx()) * (this->position.rx() - other.position.rx()) + (this->position.ry() - other.position.ry()) * (this->position.ry() - other.position.ry()) <= 2*this->r;
-//}
 /*!
  * \brief Particle::display_state
  * Helper function to show the current position and velocity of the particle.

@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,12 +12,14 @@ SOURCES += \
     liquidsimulation.cpp \
     main.cpp \
     mainwindow.cpp \
-    particle.cpp
+    particle.cpp \
+    serialport.cpp
 
 HEADERS += \
     liquidsimulation.h \
     mainwindow.h \
-    particle.h
+    particle.h \
+    serialport.h
 
 FORMS += \
     mainwindow.ui
