@@ -1,0 +1,18 @@
+<map id="particle.h" name="particle.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="314,5,397,31"/>
+<area shape="rect" id="Node000002" href="$liquidsimulation_8h.html" title="Plik nagłówkowy klasy LiquidSimulation." alt="" coords="190,79,329,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,41,277,81,274,76,328,37"/>
+<area shape="rect" id="Node000004" href="$mainwindow_8cpp.html" title=" " alt="" coords="152,225,282,251"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="301,25,231,34,151,56,112,73,75,94,42,121,15,153,8,171,12,185,24,198,43,208,95,222,152,230,151,236,94,228,41,213,21,202,7,188,3,171,11,151,38,117,72,90,109,68,150,51,230,29,300,19"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="337,225,420,251"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="365,43,377,93,386,152,386,177,382,226,377,225,381,177,381,152,372,94,360,45"/>
+<area shape="rect" id="Node000007" href="$particle_8cpp.html" title=" " alt="" coords="446,79,545,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="392,34,474,76,472,81,389,39"/>
+<area shape="rect" id="Node000003" href="$liquidsimulation_8cpp.html" title=" " alt="" coords="25,152,180,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,112,129,154,127,149,221,107"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="255,118,223,226,218,224,250,117"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8h.html" title=" " alt="" coords="255,152,371,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="279,113,307,150,302,153,275,117"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="288,188,234,227,231,223,285,183"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="335,186,370,223,366,227,331,189"/>
+</map>

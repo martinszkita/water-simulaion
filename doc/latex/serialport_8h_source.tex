@@ -1,0 +1,28 @@
+\doxysection{serialport.\+h}
+\hypertarget{serialport_8h_source}{}\label{serialport_8h_source}\mbox{\hyperlink{serialport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERIALPORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERIALPORT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QSerialPortInfo>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSerialPort}{SerialPort}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ \ \ \ \ QSerialPort\ *\ \mbox{\hyperlink{classSerialPort_a7a0258076b6b7b5d6b40bbc68bbca4ad}{serial\_port}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classSerialPort}{SerialPort}}(QObject\ *\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classSerialPort_a8e09f366ed9b26b0456b66ae7bd8c702}{\string~SerialPort}}();}
+\DoxyCodeLine{00017\ signals:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSerialPort_a7aeb26c79b34202a734378164be9343e}{dataReceived}}(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSerialPort_a10608948b793db92bf6bdd61eb4a9e97}{handleReadyRead}}();}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERIALPORT\_H}}
+
+\end{DoxyCode}

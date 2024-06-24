@@ -1,73 +1,64 @@
 #include "liquidsimulation.h"
 #include <QVector>
 #include <QtMath>
+#include <QRandomGenerator>
+#include <QSerialPort>
 
 int _fps = 60;
-int number_of_particles = 2;
+int number_of_particles = 50;
 
 LiquidSimulation::LiquidSimulation()
 {
-//    for(int i = 0 ; i < number_of_particles ; ++i){
-//        Particle *particle = new Particle();
-//        this->particles.push_back(particle);
-//        this->particles[i]->setId(i);
-//    }
-    Particle *particle = new Particle(QPointF(60,20));
-    particle->setId(1);
+   for(int i = 0 ; i < number_of_particles ; ++i){
+    QPointF randomPoint((qreal)(QRandomGenerator::global()->bounded(750) + 30), (qreal)(QRandomGenerator::global()->bounded(550) + 30));
+    Particle * particle = new Particle(randomPoint);
     this->particles.push_back(particle);
-
+    this->particles[i]->setId(i);
+    this->particles[i]->setGravity(QPointF(0,0));
+   }
+   serial_port = new SerialPort(this);
+   qInfo() << "Connect Arduino";
+   connect(serial_port, SIGNAL(dataReceived(QByteArray)), this, SLOT(handleDataReceived(QByteArray)));
 
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(resolve_particle_collisions()));
     timer->start(1000/_fps);
 
+
 }
 
 LiquidSimulation::~LiquidSimulation()
 {
-    qDebug() << "koniec liquid sumulation";
+    delete timer;
+    delete serial_port;
 }
 
 
 void LiquidSimulation::resolve_particle_collisions()
 {
-    const qreal restitution = 0.8; // Coefficient of restitution for elastic collisions (adjust as needed)
-
     // Loop through each particle
     for (auto& particlePtr : particles) {
         Particle& particle = *particlePtr;
         for (auto& targetPtr : particles) {
             Particle& target = *targetPtr;
 
+            // Ensure we're not checking the same particle
             if (particle.getId() != target.getId() && particles_touch(particle, target)) {
-                qDebug() << "Collision detected between particle" << particle.getId() << "and" << target.getId();
-
-                // Calculate relative position vector and relative velocity vector
+                // Calculate the distance vector between the particles
                 QPointF r = target.getPosition() - particle.getPosition();
-                QPointF v = target.getVelocity() - particle.getVelocity();
+                qreal distance = sqrt(QPointF::dotProduct(r, r));
 
-                // Calculate dot products
-                qreal r_dot_v = QPointF::dotProduct(r, v);
-                qreal r_dot_r = QPointF::dotProduct(r, r);
-
-                // Ensure r_dot_r is not zero to prevent division by zero
-                if (r_dot_r == 0) {
-                    continue; // Skip this collision to avoid undefined behavior
+                // Avoid division by zero
+                if (distance == 0) {
+                    continue; // Skip this iteration to avoid undefined behavior
                 }
 
-                // Calculate impulse along the normal direction
-                qreal impulse_scalar = (-(1 + restitution) * r_dot_v) / r_dot_r;
-                QPointF impulse = impulse_scalar * r;
+                // Calculate the overlap distance
+                qreal overlapDistance = 2* particle.getR() - distance;
 
-                // Update velocities
-                particle.setVelocity(particle.getVelocity() + impulse);
-                target.setVelocity(target.getVelocity() - impulse);
-
-                // Resolve overlap (optional, adjust positions)
-                qreal overlapDistance = particle.getR() + target.getR() - sqrt(r_dot_r);
                 if (overlapDistance > 0) {
-                    // Calculate overlap direction and correction vector
-                    QPointF overlapDirection = r / sqrt(r_dot_r);
+                    // Calculate the correction vector to resolve overlap
+                    QPointF overlapDirection = r / distance;
                     QPointF correction = overlapDistance * overlapDirection * 0.5;
 
                     // Move particles apart to resolve overlap
@@ -86,5 +77,38 @@ bool LiquidSimulation::particles_touch(const Particle& particle, const Particle&
     qreal radiusSquared = (particle.getR() + target.getR()) * (particle.getR() + target.getR());
     return distanceSquared <= radiusSquared;
 }
+
+void LiquidSimulation::updateGravity(const QByteArray &data)
+{
+    // Convert QByteArray to QString for easier parsing
+    QString dataStr = QString::fromUtf8(data).trimmed();
+    QStringList parts = dataStr.split(" ");
+
+    if (parts.size() == 2) {
+        bool ok1, ok2;
+        qreal newGravityX = parts[0].toDouble(&ok1);
+        qreal newGravityY = -parts[1].toDouble(&ok2);
+
+        if (ok1 && ok2) {
+            gravity=QPointF(newGravityX,newGravityY);
+            for (auto & part : particles){
+                part->setGravity(gravity);
+                //qDebug() << "zmienilem gravity";
+            }
+            //qDebug() << "Updated gravity: X =" << gravity.rx() << ", Y =" << gravity.ry();
+        } else {
+            qDebug() << "Error parsing gravity data:" << dataStr;
+        }
+    } else {
+        qDebug() << "Invalid gravity data format:" << dataStr;
+    }
+}
+
+void LiquidSimulation::handleDataReceived(const QByteArray &data)
+{
+    qInfo() << data;
+    updateGravity(data);
+}
+
 
 

@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(view);
 
-    serialPort = new SerialPort();
+
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +47,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     QMainWindow::resizeEvent(event);
 
     scene->setSceneRect(QRect(QPoint(0, 0), this->size()));
-    qInfo() << "resize";
-    qInfo() <<"height main window: "<< this->height();
+    //qInfo() << "resize";
 }
 

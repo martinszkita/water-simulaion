@@ -1,0 +1,119 @@
+# Doxyfile configuration for the liquid-simulation project
+
+# Project related settings
+PROJECT_NAME           = "Liquid Simulation"
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = doc
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Input settings
+INPUT                  = . 
+FILE_PATTERNS          = *.h *.cpp *.ui
+RECURSIVE              = NO
+
+# If you have header files in different directories, list them here
+# INCLUDE_PATHS         = include
+
+# Source code parser configuration
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+EXTRACT_ANON_NSPACES   = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+HIDE_FRIEND_COMPOUNDS  = NO
+HIDE_IN_BODY_DOCS      = NO
+
+# Build related configuration
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+GENERATE_LATEX         = YES
+GENERATE_HTML          = YES
+
+# HTML output configuration
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_HEADER            = 
+HTML_FOOTER            = 
+HTML_STYLESHEET        = 
+HTML_EXTRA_FILES       = 
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_DOCSET        = NO
+DISABLE_INDEX          = NO
+
+# LaTeX output configuration
+LATEX_OUTPUT           = latex
+LATEX_CMD_NAME         = latex
+MAKEINDEX_CMD_NAME     = makeindex
+COMPACT_LATEX          = NO
+PAPER_TYPE             = a4
+EXTRA_PACKAGES         = 
+LATEX_HEADER           = 
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = NO
+LATEX_HIDE_INDICES     = NO
+
+# Preprocessor related settings
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           = 
+INCLUDE_FILE_PATTERNS  = 
+PREDEFINED             = 
+SKIP_FUNCTION_MACROS   = YES
+
+# External tool configuration
+CLANG_ASSISTED_PARSING = NO
+CLANG_OPTIONS          = 
+
+# Dot tool configuration
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+DOT_FONTNAME           = Helvetica
+DOT_FONTSIZE           = 10
+DOT_FONTPATH           = 
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = NO
+UML_LIMIT_NUM_FIELDS   = 10
+TEMPLATE_RELATIONS     = NO
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_IMAGE_FORMAT       = png
+DOT_PATH               = 
+DOTFILE_DIRS           = 
+MSCGEN_PATH            = 
+DIA_PATH               = 
+PLANTUML_JAR_PATH      = 
+PLANTUML_CFG_FILE      = 
+
+# Documentation options
+SHOW_USED_FILES        = YES
+SHOW_FILES             = YES
+SHOW_NAMESPACES        = YES
+VERBATIM_HEADERS       = YES
+ALPHABETICAL_INDEX     = YES
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+ENUM_VALUES_PER_LINE   = 4
+
+# Qt settings
+QT_AUTOBRIEF           = YES

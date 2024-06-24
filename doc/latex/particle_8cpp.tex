@@ -1,0 +1,128 @@
+\doxysection{particle.\+cpp File Reference}
+\hypertarget{particle_8cpp}{}\label{particle_8cpp}\index{particle.cpp@{particle.cpp}}
+{\ttfamily \#include "{}particle.\+h"{}}\newline
+{\ttfamily \#include $<$QPen$>$}\newline
+{\ttfamily \#include $<$QWidget$>$}\newline
+{\ttfamily \#include $<$QPainter$>$}\newline
+{\ttfamily \#include $<$QBrush$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Scene$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$QPointF$>$}\newline
+{\ttfamily \#include $<$QKey\+Event$>$}\newline
+{\ttfamily \#include $<$QRandom\+Generator$>$}\newline
+Include dependency graph for particle.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{particle_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_add553fd5a9b16286f75e6a9149364920}{generate\+Random\+Double}} (qreal min, qreal max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{particle_8cpp_a45b67662d620a977a2cfe519f7ab6273}{fps}} = 60
+\item 
+int \mbox{\hyperlink{particle_8cpp_acb6b6c10ec7a11095abdedc5f3e1c017}{rr}} = 5
+\item 
+float \mbox{\hyperlink{particle_8cpp_a0cbf68e02f0909df434703be48517dcf}{collision\+\_\+factor}} = 0.\+1
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_a34f708e1e8aa5043737b67a9e8d6d798}{initial\+\_\+pos\+\_\+x}} = 0
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_a0c374d37558f4d8fb7ab1ce9675a4ded}{initial\+\_\+pos\+\_\+y}} = 0
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_a6fc3aa379702711f10607a888cda0692}{initial\+\_\+vel\+\_\+x}} = 0
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_ab8e358716864377cd5f58a82744599a2}{initial\+\_\+vel\+\_\+y}} = 0
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_ac25ef0757bf9ab2cc4355dfb9068d15f}{initial\+\_\+gravity\+\_\+x}} = 0
+\item 
+qreal \mbox{\hyperlink{particle_8cpp_a29716aec7be7da266ca732df6c4f7fdf}{initial\+\_\+gravity\+\_\+y}} = 0
+\item 
+QColor \mbox{\hyperlink{particle_8cpp_a824cb7f78107b86b9ddc2dcbd285f66b}{color}} = Qt\+::red
+\item 
+QPointF \mbox{\hyperlink{particle_8cpp_a2e8a7789bb8dc1e2cb71e3d05cc5ed2c}{initial\+\_\+velocity}} = QPointF(\mbox{\hyperlink{particle_8cpp_a6fc3aa379702711f10607a888cda0692}{initial\+\_\+vel\+\_\+x}},\mbox{\hyperlink{particle_8cpp_ab8e358716864377cd5f58a82744599a2}{initial\+\_\+vel\+\_\+y}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{particle_8cpp_add553fd5a9b16286f75e6a9149364920}\label{particle_8cpp_add553fd5a9b16286f75e6a9149364920} 
+\index{particle.cpp@{particle.cpp}!generateRandomDouble@{generateRandomDouble}}
+\index{generateRandomDouble@{generateRandomDouble}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{generateRandomDouble()}{generateRandomDouble()}}
+{\footnotesize\ttfamily qreal generate\+Random\+Double (\begin{DoxyParamCaption}\item[{qreal}]{min,  }\item[{qreal}]{max }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{particle_8cpp_a0cbf68e02f0909df434703be48517dcf}\label{particle_8cpp_a0cbf68e02f0909df434703be48517dcf} 
+\index{particle.cpp@{particle.cpp}!collision\_factor@{collision\_factor}}
+\index{collision\_factor@{collision\_factor}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{collision\_factor}{collision\_factor}}
+{\footnotesize\ttfamily float collision\+\_\+factor = 0.\+1}
+
+\Hypertarget{particle_8cpp_a824cb7f78107b86b9ddc2dcbd285f66b}\label{particle_8cpp_a824cb7f78107b86b9ddc2dcbd285f66b} 
+\index{particle.cpp@{particle.cpp}!color@{color}}
+\index{color@{color}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily QColor color = Qt\+::red}
+
+\Hypertarget{particle_8cpp_a45b67662d620a977a2cfe519f7ab6273}\label{particle_8cpp_a45b67662d620a977a2cfe519f7ab6273} 
+\index{particle.cpp@{particle.cpp}!fps@{fps}}
+\index{fps@{fps}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{fps}{fps}}
+{\footnotesize\ttfamily int fps = 60}
+
+\Hypertarget{particle_8cpp_ac25ef0757bf9ab2cc4355dfb9068d15f}\label{particle_8cpp_ac25ef0757bf9ab2cc4355dfb9068d15f} 
+\index{particle.cpp@{particle.cpp}!initial\_gravity\_x@{initial\_gravity\_x}}
+\index{initial\_gravity\_x@{initial\_gravity\_x}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_gravity\_x}{initial\_gravity\_x}}
+{\footnotesize\ttfamily qreal initial\+\_\+gravity\+\_\+x = 0}
+
+\Hypertarget{particle_8cpp_a29716aec7be7da266ca732df6c4f7fdf}\label{particle_8cpp_a29716aec7be7da266ca732df6c4f7fdf} 
+\index{particle.cpp@{particle.cpp}!initial\_gravity\_y@{initial\_gravity\_y}}
+\index{initial\_gravity\_y@{initial\_gravity\_y}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_gravity\_y}{initial\_gravity\_y}}
+{\footnotesize\ttfamily qreal initial\+\_\+gravity\+\_\+y = 0}
+
+\Hypertarget{particle_8cpp_a34f708e1e8aa5043737b67a9e8d6d798}\label{particle_8cpp_a34f708e1e8aa5043737b67a9e8d6d798} 
+\index{particle.cpp@{particle.cpp}!initial\_pos\_x@{initial\_pos\_x}}
+\index{initial\_pos\_x@{initial\_pos\_x}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_pos\_x}{initial\_pos\_x}}
+{\footnotesize\ttfamily qreal initial\+\_\+pos\+\_\+x = 0}
+
+\Hypertarget{particle_8cpp_a0c374d37558f4d8fb7ab1ce9675a4ded}\label{particle_8cpp_a0c374d37558f4d8fb7ab1ce9675a4ded} 
+\index{particle.cpp@{particle.cpp}!initial\_pos\_y@{initial\_pos\_y}}
+\index{initial\_pos\_y@{initial\_pos\_y}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_pos\_y}{initial\_pos\_y}}
+{\footnotesize\ttfamily qreal initial\+\_\+pos\+\_\+y = 0}
+
+\Hypertarget{particle_8cpp_a6fc3aa379702711f10607a888cda0692}\label{particle_8cpp_a6fc3aa379702711f10607a888cda0692} 
+\index{particle.cpp@{particle.cpp}!initial\_vel\_x@{initial\_vel\_x}}
+\index{initial\_vel\_x@{initial\_vel\_x}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_vel\_x}{initial\_vel\_x}}
+{\footnotesize\ttfamily qreal initial\+\_\+vel\+\_\+x = 0}
+
+\Hypertarget{particle_8cpp_ab8e358716864377cd5f58a82744599a2}\label{particle_8cpp_ab8e358716864377cd5f58a82744599a2} 
+\index{particle.cpp@{particle.cpp}!initial\_vel\_y@{initial\_vel\_y}}
+\index{initial\_vel\_y@{initial\_vel\_y}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_vel\_y}{initial\_vel\_y}}
+{\footnotesize\ttfamily qreal initial\+\_\+vel\+\_\+y = 0}
+
+\Hypertarget{particle_8cpp_a2e8a7789bb8dc1e2cb71e3d05cc5ed2c}\label{particle_8cpp_a2e8a7789bb8dc1e2cb71e3d05cc5ed2c} 
+\index{particle.cpp@{particle.cpp}!initial\_velocity@{initial\_velocity}}
+\index{initial\_velocity@{initial\_velocity}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{initial\_velocity}{initial\_velocity}}
+{\footnotesize\ttfamily QPointF initial\+\_\+velocity = QPointF(\mbox{\hyperlink{particle_8cpp_a6fc3aa379702711f10607a888cda0692}{initial\+\_\+vel\+\_\+x}},\mbox{\hyperlink{particle_8cpp_ab8e358716864377cd5f58a82744599a2}{initial\+\_\+vel\+\_\+y}})}
+
+\Hypertarget{particle_8cpp_acb6b6c10ec7a11095abdedc5f3e1c017}\label{particle_8cpp_acb6b6c10ec7a11095abdedc5f3e1c017} 
+\index{particle.cpp@{particle.cpp}!rr@{rr}}
+\index{rr@{rr}!particle.cpp@{particle.cpp}}
+\doxysubsubsection{\texorpdfstring{rr}{rr}}
+{\footnotesize\ttfamily int rr = 5}
+

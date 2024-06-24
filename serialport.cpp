@@ -1,7 +1,5 @@
 #include "serialport.h"
 
-
-
 SerialPort::SerialPort(QObject *parent) : QObject(parent), serial_port(new QSerialPort(this)){
     serial_port->setPortName("/dev/ttyUSB0");
     serial_port->setBaudRate(QSerialPort::Baud9600);
@@ -25,5 +23,6 @@ SerialPort::~SerialPort() {
 void SerialPort::handleReadyRead()
 {
     QByteArray data = serial_port->readAll();
-    qDebug() << "Data received:" << data;
+    //qDebug() << "Data received:" << data;
+    emit dataReceived(data);
 }

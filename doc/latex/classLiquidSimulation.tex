@@ -1,0 +1,209 @@
+\doxysection{Liquid\+Simulation Class Reference}
+\hypertarget{classLiquidSimulation}{}\label{classLiquidSimulation}\index{LiquidSimulation@{LiquidSimulation}}
+
+
+Klasa symulująca ciecz za pomocą cząsteczek.  
+
+
+
+
+{\ttfamily \#include $<$liquidsimulation.\+h$>$}
+
+
+
+Inheritance diagram for Liquid\+Simulation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classLiquidSimulation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Liquid\+Simulation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classLiquidSimulation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLiquidSimulation_a0b1f34eb1fd12de1a6f4ce06912a055f}{resolve\+\_\+particle\+\_\+collisions}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje kolizje cząsteczek. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLiquidSimulation_aa604466d945b918fa8d6fa0845b28cde}{handle\+Data\+Received}} (const QByte\+Array \&data)
+\begin{DoxyCompactList}\small\item\em Obsługuje odbieranie danych z portu szeregowego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLiquidSimulation_a3c20b19b6792dcd192b572ee6cfc6efb}{update\+Gravity}} (const QByte\+Array \&data)
+\begin{DoxyCompactList}\small\item\em Aktualizuje siłę grawitacji na podstawie otrzymanych danych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLiquidSimulation_ae928eb6679acf2389b3b0233549be378}{Liquid\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLiquidSimulation_a8210a40f0dfb2cbfb18a7333da2dbb7e}{\texorpdfstring{$\sim$}{\string~}\+Liquid\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLiquidSimulation_abe9bb93fe6384fd28aeee4db983e2686}{particles\+\_\+collide}} (\mbox{\hyperlink{classParticle}{Particle}} \&particle1, \mbox{\hyperlink{classParticle}{Particle}} \&particle2)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy dwie cząsteczki kolidują. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLiquidSimulation_af32c639abe77260c638c500b0409213c}{particles\+\_\+touch}} (const \mbox{\hyperlink{classParticle}{Particle}} \&particle, const \mbox{\hyperlink{classParticle}{Particle}} \&target)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy jedna cząsteczka dotyka drugiej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ \mbox{\hyperlink{classParticle}{Particle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classLiquidSimulation_a7fb45963bfa40ad1b1c66ba9d61a170d}{particles}}
+\item 
+QPointF \mbox{\hyperlink{classLiquidSimulation_aa843e749d56980ae8e521aa12e0eca81}{gravity}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QTimer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLiquidSimulation_a6f3c5fde65eee66cd55198114f1f7541}{timer}}
+\item 
+\mbox{\hyperlink{classSerialPort}{Serial\+Port}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLiquidSimulation_a18320f1bcb7683c8788f3a997d3965d2}{serial\+\_\+port}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa symulująca ciecz za pomocą cząsteczek. 
+
+Klasa \doxylink{classLiquidSimulation}{Liquid\+Simulation} zarządza cząsteczkami, obsługuje ich kolizje, odbiera dane z portu szeregowego i aktualizuje siłę grawitacji. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLiquidSimulation_ae928eb6679acf2389b3b0233549be378}\label{classLiquidSimulation_ae928eb6679acf2389b3b0233549be378} 
+\index{LiquidSimulation@{LiquidSimulation}!LiquidSimulation@{LiquidSimulation}}
+\index{LiquidSimulation@{LiquidSimulation}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{LiquidSimulation()}{LiquidSimulation()}}
+{\footnotesize\ttfamily Liquid\+Simulation\+::\+Liquid\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor domyślny. 
+
+\Hypertarget{classLiquidSimulation_a8210a40f0dfb2cbfb18a7333da2dbb7e}\label{classLiquidSimulation_a8210a40f0dfb2cbfb18a7333da2dbb7e} 
+\index{LiquidSimulation@{LiquidSimulation}!````~LiquidSimulation@{\texorpdfstring{$\sim$}{\string~}LiquidSimulation}}
+\index{````~LiquidSimulation@{\texorpdfstring{$\sim$}{\string~}LiquidSimulation}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LiquidSimulation()}{\string~LiquidSimulation()}}
+{\footnotesize\ttfamily Liquid\+Simulation\+::\texorpdfstring{$\sim$}{\string~}\+Liquid\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLiquidSimulation_aa604466d945b918fa8d6fa0845b28cde}\label{classLiquidSimulation_aa604466d945b918fa8d6fa0845b28cde} 
+\index{LiquidSimulation@{LiquidSimulation}!handleDataReceived@{handleDataReceived}}
+\index{handleDataReceived@{handleDataReceived}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{handleDataReceived}{handleDataReceived}}
+{\footnotesize\ttfamily void Liquid\+Simulation\+::handle\+Data\+Received (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Obsługuje odbieranie danych z portu szeregowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Otrzymane dane w postaci QByte\+Array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLiquidSimulation_abe9bb93fe6384fd28aeee4db983e2686}\label{classLiquidSimulation_abe9bb93fe6384fd28aeee4db983e2686} 
+\index{LiquidSimulation@{LiquidSimulation}!particles\_collide@{particles\_collide}}
+\index{particles\_collide@{particles\_collide}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{particles\_collide()}{particles\_collide()}}
+{\footnotesize\ttfamily bool Liquid\+Simulation\+::particles\+\_\+collide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParticle}{Particle}} \&}]{particle1,  }\item[{\mbox{\hyperlink{classParticle}{Particle}} \&}]{particle2 }\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy dwie cząsteczki kolidują. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particle1} & Pierwsza cząsteczka. \\
+\hline
+{\em particle2} & Druga cząsteczka. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, jeśli cząsteczki kolidują, false w przeciwnym razie. 
+\end{DoxyReturn}
+\Hypertarget{classLiquidSimulation_af32c639abe77260c638c500b0409213c}\label{classLiquidSimulation_af32c639abe77260c638c500b0409213c} 
+\index{LiquidSimulation@{LiquidSimulation}!particles\_touch@{particles\_touch}}
+\index{particles\_touch@{particles\_touch}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{particles\_touch()}{particles\_touch()}}
+{\footnotesize\ttfamily bool Liquid\+Simulation\+::particles\+\_\+touch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParticle}{Particle}} \&}]{particle,  }\item[{const \mbox{\hyperlink{classParticle}{Particle}} \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy jedna cząsteczka dotyka drugiej. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particle} & Cząsteczka sprawdzająca. \\
+\hline
+{\em target} & Cząsteczka docelowa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, jeśli cząsteczki się dotykają, false w przeciwnym razie. 
+\end{DoxyReturn}
+\Hypertarget{classLiquidSimulation_a0b1f34eb1fd12de1a6f4ce06912a055f}\label{classLiquidSimulation_a0b1f34eb1fd12de1a6f4ce06912a055f} 
+\index{LiquidSimulation@{LiquidSimulation}!resolve\_particle\_collisions@{resolve\_particle\_collisions}}
+\index{resolve\_particle\_collisions@{resolve\_particle\_collisions}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{resolve\_particle\_collisions}{resolve\_particle\_collisions}}
+{\footnotesize\ttfamily void Liquid\+Simulation\+::resolve\+\_\+particle\+\_\+collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Obsługuje kolizje cząsteczek. 
+
+\Hypertarget{classLiquidSimulation_a3c20b19b6792dcd192b572ee6cfc6efb}\label{classLiquidSimulation_a3c20b19b6792dcd192b572ee6cfc6efb} 
+\index{LiquidSimulation@{LiquidSimulation}!updateGravity@{updateGravity}}
+\index{updateGravity@{updateGravity}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{updateGravity}{updateGravity}}
+{\footnotesize\ttfamily void Liquid\+Simulation\+::update\+Gravity (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Aktualizuje siłę grawitacji na podstawie otrzymanych danych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Otrzymane dane w postaci QByte\+Array. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLiquidSimulation_aa843e749d56980ae8e521aa12e0eca81}\label{classLiquidSimulation_aa843e749d56980ae8e521aa12e0eca81} 
+\index{LiquidSimulation@{LiquidSimulation}!gravity@{gravity}}
+\index{gravity@{gravity}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily QPointF Liquid\+Simulation\+::gravity}
+
+Siła grawitacji działająca na cząsteczki. \Hypertarget{classLiquidSimulation_a7fb45963bfa40ad1b1c66ba9d61a170d}\label{classLiquidSimulation_a7fb45963bfa40ad1b1c66ba9d61a170d} 
+\index{LiquidSimulation@{LiquidSimulation}!particles@{particles}}
+\index{particles@{particles}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{particles}{particles}}
+{\footnotesize\ttfamily QVector$<$\mbox{\hyperlink{classParticle}{Particle}}\texorpdfstring{$\ast$}{*}$>$ Liquid\+Simulation\+::particles}
+
+Wektor przechowujący wskaźniki do cząsteczek. \Hypertarget{classLiquidSimulation_a18320f1bcb7683c8788f3a997d3965d2}\label{classLiquidSimulation_a18320f1bcb7683c8788f3a997d3965d2} 
+\index{LiquidSimulation@{LiquidSimulation}!serial\_port@{serial\_port}}
+\index{serial\_port@{serial\_port}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{serial\_port}{serial\_port}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSerialPort}{Serial\+Port}}\texorpdfstring{$\ast$}{*} Liquid\+Simulation\+::serial\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+Port szeregowy do odbierania danych. \Hypertarget{classLiquidSimulation_a6f3c5fde65eee66cd55198114f1f7541}\label{classLiquidSimulation_a6f3c5fde65eee66cd55198114f1f7541} 
+\index{LiquidSimulation@{LiquidSimulation}!timer@{timer}}
+\index{timer@{timer}!LiquidSimulation@{LiquidSimulation}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily QTimer\texorpdfstring{$\ast$}{*} Liquid\+Simulation\+::timer\hspace{0.3cm}{\ttfamily [private]}}
+
+Timer do zarządzania czasem symulacji. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{liquidsimulation_8h}{liquidsimulation.\+h}}\item 
+\mbox{\hyperlink{liquidsimulation_8cpp}{liquidsimulation.\+cpp}}\end{DoxyCompactItemize}

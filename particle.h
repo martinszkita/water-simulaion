@@ -18,10 +18,12 @@ class Particle : public QObject, public QGraphicsItem
 private:
     QPointF position; ///< (x,y) position of the middle of the particle
     QPointF velocity; ///< (x,y) velocity of the middle of the particle
+    QPointF gravity;
     QColor kolor; ///< color of the particle
     QTimer * timer1; ///< timer to refresh particle's parameters every quant of time
     int r; ///< particle's radius
     int id;
+
 public:
     Particle();
     Particle(const Particle & other);
@@ -41,7 +43,9 @@ public:
     void setPosition(QPointF newPosition);
     QPointF getPosition() const;
     QPointF getVelocity() const;
+    QPointF getGravity() const;
     void setVelocity(QPointF newVelocity);
+    void setGravity(QPointF newVelocity);
     int getId() const;
     void setId(int newId);
     void reverse_velocity();

@@ -1,0 +1,41 @@
+\doxysection{liquidsimulation.\+h}
+\hypertarget{liquidsimulation_8h_source}{}\label{liquidsimulation_8h_source}\mbox{\hyperlink{liquidsimulation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ LIQUIDSIMULATION\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ LIQUIDSIMULATION\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{particle_8h}{particle.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serialport_8h}{serialport.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLiquidSimulation}{LiquidSimulation}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ QTimer\ *\ \mbox{\hyperlink{classLiquidSimulation_a6f3c5fde65eee66cd55198114f1f7541}{timer}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classSerialPort}{SerialPort}}\ *\ \mbox{\hyperlink{classLiquidSimulation_a18320f1bcb7683c8788f3a997d3965d2}{serial\_port}};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ QVector<Particle*>\ \mbox{\hyperlink{classLiquidSimulation_a7fb45963bfa40ad1b1c66ba9d61a170d}{particles}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ QPointF\ \mbox{\hyperlink{classLiquidSimulation_aa843e749d56980ae8e521aa12e0eca81}{gravity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classLiquidSimulation_ae928eb6679acf2389b3b0233549be378}{LiquidSimulation}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classLiquidSimulation_a8210a40f0dfb2cbfb18a7333da2dbb7e}{\string~LiquidSimulation}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLiquidSimulation_abe9bb93fe6384fd28aeee4db983e2686}{particles\_collide}}(\mbox{\hyperlink{classParticle}{Particle}}\ \&\ particle1,\ \mbox{\hyperlink{classParticle}{Particle}}\ \&\ particle2);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLiquidSimulation_af32c639abe77260c638c500b0409213c}{particles\_touch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classParticle}{Particle}}\&\ particle,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classParticle}{Particle}}\&\ target);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLiquidSimulation_a0b1f34eb1fd12de1a6f4ce06912a055f}{resolve\_particle\_collisions}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLiquidSimulation_aa604466d945b918fa8d6fa0845b28cde}{handleDataReceived}}(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLiquidSimulation_a3c20b19b6792dcd192b572ee6cfc6efb}{updateGravity}}(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIQUIDSIMULATION\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{liquidsimulation_8h}{liquidsimulation.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};\ \}}
+\DoxyCodeLine{00012\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classMainWindow}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_aad75236c74a5c340c3e18749a9b5eb4f}{resizeEvent}}(QResizeEvent\ *\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_aefc429a6f3efe0c6acf62ca115aba3c6}{on\_resizeEvent}}(QResizeEvent\ *\ event);}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ Ui::MainWindow\ *\mbox{\hyperlink{classMainWindow_a35466a70ed47252a0191168126a352a5}{ui}};}
+\DoxyCodeLine{00030\ \ \ \ \ QGraphicsScene\ *\ \mbox{\hyperlink{classMainWindow_a51ac2b126495216832501cea3929c6f6}{scene}};}
+\DoxyCodeLine{00031\ \ \ \ \ QGraphicsView\ *\ \mbox{\hyperlink{classMainWindow_a6e33bc418ea3e6d93b3021933bfa3baa}{view}};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classLiquidSimulation}{LiquidSimulation}}\ *\ \mbox{\hyperlink{classMainWindow_a399050fe3bb5218fe00c5de9380d895a}{simulation}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

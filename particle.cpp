@@ -6,23 +6,22 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QTimer>
-#include <qrandom.h>
 #include <QPointF>
 #include <QKeyEvent>
+#include <QRandomGenerator>
 
 int fps = 60;
-int rr = 30;
-float collision_factor = 0.9;
-qreal initial_pos_x = 10;
+int rr = 5;
+float collision_factor = 0.1;
+qreal initial_pos_x = 0;
 qreal initial_pos_y = 0;
 qreal initial_vel_x = 0;
-qreal initial_vel_y = 1;
-qreal gravity_x = 0;
-qreal gravity_y = 1;
+qreal initial_vel_y = 0;
+qreal initial_gravity_x = 0;
+qreal initial_gravity_y = 0;
 QColor color = Qt::red;
 
 QPointF initial_velocity = QPointF(initial_vel_x,initial_vel_y);
-QPointF gravity = QPointF(gravity_x,gravity_y);
 /*!
  * \brief Particle::Particle
  * Particle class generator for random initial velocity and position
@@ -57,6 +56,18 @@ void Particle::setVelocity(QPointF newVelocity)
     velocity = newVelocity;
 }
 
+
+QPointF Particle::getGravity() const
+{
+    return gravity;
+}
+
+void Particle::setGravity(QPointF newGravity)
+{
+    gravity = newGravity;
+}
+
+
 int Particle::getId() const
 {
     return id;
@@ -73,19 +84,6 @@ void Particle::reverse_velocity()
     velocity.ry() *= -1;
 }
 
-// Particle::Particle()
-// {
-//     this->kolor = color;
-//     this->r=rr;
-
-//     this->position=QPointF(rand() % 400  , rand() % 300  );
-//     this->velocity=QPointF((rand() % 10 ) - 10 , (rand() % 10 ) - 10 );
-
-//     ///< timer setup for moving particle
-//     timer1 = new QTimer();
-//     connect(timer1,SIGNAL(timeout()),this,SLOT(move()));
-//     timer1->start(1000/fps);
-// }
 
 Particle::Particle()
 {
@@ -94,19 +92,21 @@ Particle::Particle()
     this->r=rr;
 
     if (scene()) {
-        qreal sceneWidth = scene()->width();
-        qreal sceneHeight = scene()->height();
+        // qreal sceneWidth = scene()->width();
+        // qreal sceneHeight = scene()->height();
 
-        this->velocity=initial_velocity;
-        this->position = QPointF((qreal)(QRandomGenerator::global()->bounded(sceneWidth) - 10),
-                                 (qreal)(QRandomGenerator::global()->bounded(sceneHeight) - 10));
+        // this->velocity=initial_velocity;
+        // this->position = QPointF((qreal)(QRandomGenerator::global()->bounded(sceneWidth) - 2 * r) + 2 * r,
+        //                          (qreal)(QRandomGenerator::global()->bounded(sceneHeight) - 2 * r) + 2 * r);
+        // setPos(this->position);
     }
 
     else {
-        qInfo() << "scene null ptr";
+        qInfo() << "scene null ptr ";
+        qInfo() << "takie jest pozcyja w bezparam: " << this->position;
     }
-    qInfo() << "bez:" << position;
-    setPos(this->position);
+    //qInfo() << "bez:" << position;
+
 }
 
 Particle::Particle(const Particle &other)
@@ -115,6 +115,12 @@ Particle::Particle(const Particle &other)
     this->velocity = other.velocity;
     this->r = other.r;
     this->timer1=other.timer1;
+}
+
+qreal generateRandomDouble(qreal min, qreal max)
+{
+    // Generate a random double between min and max
+    return min + (QRandomGenerator::global()->generateDouble() * (max - min));
 }
 
 /*!
@@ -131,7 +137,13 @@ Particle::Particle(QPointF pos): position(pos)
 {
     this->kolor = color;
     this->r=rr;
-    this->velocity=initial_velocity;
+
+    qreal randomX = generateRandomDouble(-1.0, 1.0);
+    qreal randomY = generateRandomDouble(-1.0, 1.0);
+
+    QPointF randomVelocity(randomX, randomY);
+
+    this->velocity = randomVelocity;
 
     ///< timer setup for moving particle
     timer1 = new QTimer();
@@ -170,9 +182,9 @@ QRectF Particle::boundingRect() const
  */
 void Particle::resolve_edge_collisions(){
 
-    if (position.rx()   < r/2){
+    if (position.rx()   < r){
         velocity.rx() *= -1 * collision_factor;
-        position.rx() = r/2;
+        position.rx() = r;
         //qDebug() << "lewa sciana";
     }
     else if(position.rx()+r/2  >= scene()->width()/2){
@@ -198,10 +210,11 @@ void Particle::resolve_edge_collisions(){
  */
 void Particle::display_state()
 {
-    qInfo() << "------------------------------------";
-    qInfo() << "particle: " << id;
-    qInfo() << "x:" << position.rx()<<" y: "<<position.ry();
-    qInfo() << "v_x: " <<velocity.rx()<<" v_y: "<<velocity.ry();
+    // qInfo() << "------------------------------------";
+    // qInfo() << "particle: " << id;
+    // qInfo() << "x:" << position.rx()<<" y: "<<position.ry();
+    // qInfo() << "v_x: " <<velocity.rx()<<" v_y: "<<velocity.ry();
+    qInfo() << "g_x: " <<gravity.rx()<<" g_y: "<<gravity.ry();
 }
 
 bool Particle::particles_touch(const Particle & other)
@@ -219,6 +232,13 @@ void Particle::move()
     velocity += gravity;
     position += velocity;
     resolve_edge_collisions();
+
+    if(velocity.rx() < 0.5){
+        velocity.rx() = 0;
+    }
+    if(velocity.ry() < 0.5){
+        velocity.ry() = 0;
+    }
 
     setPos(position);
     scene()->update();

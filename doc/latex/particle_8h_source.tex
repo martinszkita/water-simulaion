@@ -1,0 +1,60 @@
+\doxysection{particle.\+h}
+\hypertarget{particle_8h_source}{}\label{particle_8h_source}\mbox{\hyperlink{particle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARTICLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARTICLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParticle}{Particle}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QGraphicsItem}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a314eeeb537a6dd0b2ddc9fd3924a31e2}{position}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a4a834a668fb904a857f0545e557e8062}{velocity}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a7078fd92602f86946140aa3c9f8f4c7e}{gravity}};}
+\DoxyCodeLine{00022\ \ \ \ \ QColor\ \mbox{\hyperlink{classParticle_af4e61a7099604b488dd5d934484216f3}{kolor}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ QTimer\ *\ \mbox{\hyperlink{classParticle_a6ecfc0c018d23b7fdf147804683b1bc9}{timer1}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classParticle_ab004141fc93b44474523c389b96a2e57}{r}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classParticle_a544b202775517f8ba05efcb9e0a21bee}{id}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classParticle}{Particle}}\ \&\ other);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle}}(QPointF);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classParticle}{Particle}}\ \&\ \mbox{\hyperlink{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classParticle}{Particle}}\ \&\ other);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}{paint}}(QPainter\ *painter,\ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem\ *option,\ QWidget\ *widget\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ QRectF\ \mbox{\hyperlink{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}{boundingRect}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_a5aa1b197a5e1a0c290aa49937a500dce}{resolve\_edge\_collisions}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_a22276a917b4627bfb6181af121ca02ec}{display\_state}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classParticle_aebe022f7284ca86b3357bb7c8f0bfdf9}{particles\_touch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classParticle}{Particle}}\ \&\ \ other);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ setters\ and\ getters}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_aaa9f8743b97982ca5011d2238a065676}{setR}}(\textcolor{keywordtype}{int}\ newR);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classParticle_a9dc953f460943b14eb4f55005f244eb1}{getR}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_af2717748f2993a434785d0e9f65933dc}{setPosition}}(QPointF\ newPosition);}
+\DoxyCodeLine{00044\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a385d668efcd35c05dd325132a2abbc44}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a917ce57a6158f0825cd64233b075f1dd}{getVelocity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ QPointF\ \mbox{\hyperlink{classParticle_a70572c34acf8ef651bf7f583635baa4a}{getGravity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_ab8d11189a745c9ac1f21618f80028e38}{setVelocity}}(QPointF\ newVelocity);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_abf776cb38b107e79ff0e85d62ecbee22}{setGravity}}(QPointF\ newVelocity);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classParticle_a4954712615601a01f84567b0768b4c0c}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_a735f7c3ebcc8912e865adc92f1a65dfb}{setId}}(\textcolor{keywordtype}{int}\ newId);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_ad78728caa5b3ae5a5464d52f5ea528eb}{reverse\_velocity}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}{move}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParticle_a7913ec0f59d0215f427ee869816cc390}{key\_pressed}}(QKeyEvent\ *\ event);}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARTICLE\_H}}
+
+\end{DoxyCode}

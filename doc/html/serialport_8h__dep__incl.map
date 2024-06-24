@@ -1,0 +1,16 @@
+<map id="serialport.h" name="serialport.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="224,5,320,31"/>
+<area shape="rect" id="Node000002" href="$liquidsimulation_8h.html" title="Plik nagłówkowy klasy LiquidSimulation." alt="" coords="128,79,267,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,42,211,80,208,77,248,38"/>
+<area shape="rect" id="Node000007" href="$serialport_8cpp.html" title=" " alt="" coords="291,79,402,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="296,38,336,77,333,80,292,42"/>
+<area shape="rect" id="Node000003" href="$liquidsimulation_8cpp.html" title=" " alt="" coords="5,152,160,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,113,103,154,100,150,166,109"/>
+<area shape="rect" id="Node000004" href="$mainwindow_8cpp.html" title=" " alt="" coords="132,225,263,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="200,118,200,225,195,225,195,118"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8h.html" title=" " alt="" coords="235,152,351,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="225,110,279,150,276,154,222,114"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="268,188,215,227,211,223,265,183"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="287,225,369,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="307,189,325,224,320,226,303,191"/>
+</map>

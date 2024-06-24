@@ -1,0 +1,361 @@
+\doxysection{Particle Class Reference}
+\hypertarget{classParticle}{}\label{classParticle}\index{Particle@{Particle}}
+
+
+The \doxylink{classParticle}{Particle} class.  
+
+
+
+
+{\ttfamily \#include $<$particle.\+h$>$}
+
+
+
+Inheritance diagram for Particle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classParticle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classParticle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}{move}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}{Particle\+::move} Updates the particle\textquotesingle{}s position every (set in the timer) quant of time and then refreshes the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle}} ()
+\item 
+\mbox{\hyperlink{classParticle_a24b04cb7c6f7ea4242d25c410f44ae56}{Particle}} (const \mbox{\hyperlink{classParticle}{Particle}} \&other)
+\item 
+\mbox{\hyperlink{classParticle_ab08ecf3b3688249965cc33731e06bdad}{Particle}} (QPointF)
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle\+::\+Particle}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParticle}{Particle}} \& \mbox{\hyperlink{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0}{operator=}} (const \mbox{\hyperlink{classParticle}{Particle}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}{paint}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}option, QWidget \texorpdfstring{$\ast$}{*}widget=nullptr) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}{Particle\+::paint} Function paints a circule with the given position, color and brush. \end{DoxyCompactList}\item 
+virtual QRectF \mbox{\hyperlink{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}{bounding\+Rect}} () const override
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}{Particle\+::bounding\+Rect} Creates a rectangle to bound a circular particle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParticle_a5aa1b197a5e1a0c290aa49937a500dce}{resolve\+\_\+edge\+\_\+collisions}} ()
+\begin{DoxyCompactList}\small\item\em Particle\+::resolve\+\_\+collisions Function handles a partcile hitting the edge of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParticle_a22276a917b4627bfb6181af121ca02ec}{display\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_a22276a917b4627bfb6181af121ca02ec}{Particle\+::display\+\_\+state} Helper function to show the current position and velocity of the particle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParticle_aebe022f7284ca86b3357bb7c8f0bfdf9}{particles\+\_\+touch}} (const \mbox{\hyperlink{classParticle}{Particle}} \&other)
+\item 
+void \mbox{\hyperlink{classParticle_aaa9f8743b97982ca5011d2238a065676}{setR}} (int newR)
+\begin{DoxyCompactList}\small\item\em \doxylink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle\+::\+Particle} \doxylink{classParticle}{Particle} class generator for random initial velocity and position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classParticle_a9dc953f460943b14eb4f55005f244eb1}{getR}} () const
+\item 
+void \mbox{\hyperlink{classParticle_af2717748f2993a434785d0e9f65933dc}{set\+Position}} (QPointF new\+Position)
+\item 
+QPointF \mbox{\hyperlink{classParticle_a385d668efcd35c05dd325132a2abbc44}{get\+Position}} () const
+\item 
+QPointF \mbox{\hyperlink{classParticle_a917ce57a6158f0825cd64233b075f1dd}{get\+Velocity}} () const
+\item 
+QPointF \mbox{\hyperlink{classParticle_a70572c34acf8ef651bf7f583635baa4a}{get\+Gravity}} () const
+\item 
+void \mbox{\hyperlink{classParticle_ab8d11189a745c9ac1f21618f80028e38}{set\+Velocity}} (QPointF new\+Velocity)
+\item 
+void \mbox{\hyperlink{classParticle_abf776cb38b107e79ff0e85d62ecbee22}{set\+Gravity}} (QPointF new\+Velocity)
+\item 
+int \mbox{\hyperlink{classParticle_a4954712615601a01f84567b0768b4c0c}{get\+Id}} () const
+\item 
+void \mbox{\hyperlink{classParticle_a735f7c3ebcc8912e865adc92f1a65dfb}{set\+Id}} (int new\+Id)
+\item 
+void \mbox{\hyperlink{classParticle_ad78728caa5b3ae5a5464d52f5ea528eb}{reverse\+\_\+velocity}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classParticle_a7913ec0f59d0215f427ee869816cc390}{key\+\_\+pressed}} (QKey\+Event \texorpdfstring{$\ast$}{*}event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{classParticle_a314eeeb537a6dd0b2ddc9fd3924a31e2}{position}}
+\begin{DoxyCompactList}\small\item\em (x,y) position of the middle of the particle \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{classParticle_a4a834a668fb904a857f0545e557e8062}{velocity}}
+\begin{DoxyCompactList}\small\item\em (x,y) velocity of the middle of the particle \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{classParticle_a7078fd92602f86946140aa3c9f8f4c7e}{gravity}}
+\item 
+QColor \mbox{\hyperlink{classParticle_af4e61a7099604b488dd5d934484216f3}{kolor}}
+\begin{DoxyCompactList}\small\item\em color of the particle \end{DoxyCompactList}\item 
+QTimer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classParticle_a6ecfc0c018d23b7fdf147804683b1bc9}{timer1}}
+\begin{DoxyCompactList}\small\item\em timer to refresh particle\textquotesingle{}s parameters every quant of time \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classParticle_ab004141fc93b44474523c389b96a2e57}{r}}
+\begin{DoxyCompactList}\small\item\em particle\textquotesingle{}s radius \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classParticle_a544b202775517f8ba05efcb9e0a21bee}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classParticle}{Particle} class. 
+
+Represents a single object used to simulate fluid dynamics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}\label{classParticle_a40f4c7e248029d72e7714b7802d5e5e1} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_a24b04cb7c6f7ea4242d25c410f44ae56}\label{classParticle_a24b04cb7c6f7ea4242d25c410f44ae56} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParticle}{Particle}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_ab08ecf3b3688249965cc33731e06bdad}\label{classParticle_ab08ecf3b3688249965cc33731e06bdad} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{QPointF}]{pos }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle\+::\+Particle}. 
+
+\doxylink{classParticle}{Particle} class constructor. Sets up the particle\textquotesingle{}s parameters. Starts the timer and so the particle movement. 
+\begin{DoxyParams}{Parameters}
+{\em param1} & QPointF pos, which is the initial position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classParticle}{Particle} class object 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} timer setup for moving particle
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}\label{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4} 
+\index{Particle@{Particle}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily QRectF Particle\+::bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classParticle_a84db8a1e5cb5a368d32c153acf08e0c4}{Particle\+::bounding\+Rect} Creates a rectangle to bound a circular particle. 
+
+\begin{DoxyReturn}{Returns}
+bounding\+Rect 
+\end{DoxyReturn}
+\Hypertarget{classParticle_a22276a917b4627bfb6181af121ca02ec}\label{classParticle_a22276a917b4627bfb6181af121ca02ec} 
+\index{Particle@{Particle}!display\_state@{display\_state}}
+\index{display\_state@{display\_state}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{display\_state()}{display\_state()}}
+{\footnotesize\ttfamily void Particle\+::display\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classParticle_a22276a917b4627bfb6181af121ca02ec}{Particle\+::display\+\_\+state} Helper function to show the current position and velocity of the particle. 
+
+\Hypertarget{classParticle_a70572c34acf8ef651bf7f583635baa4a}\label{classParticle_a70572c34acf8ef651bf7f583635baa4a} 
+\index{Particle@{Particle}!getGravity@{getGravity}}
+\index{getGravity@{getGravity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getGravity()}{getGravity()}}
+{\footnotesize\ttfamily QPointF Particle\+::get\+Gravity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classParticle_a4954712615601a01f84567b0768b4c0c}\label{classParticle_a4954712615601a01f84567b0768b4c0c} 
+\index{Particle@{Particle}!getId@{getId}}
+\index{getId@{getId}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Particle\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classParticle_a385d668efcd35c05dd325132a2abbc44}\label{classParticle_a385d668efcd35c05dd325132a2abbc44} 
+\index{Particle@{Particle}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily QPointF Particle\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classParticle_a9dc953f460943b14eb4f55005f244eb1}\label{classParticle_a9dc953f460943b14eb4f55005f244eb1} 
+\index{Particle@{Particle}!getR@{getR}}
+\index{getR@{getR}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getR()}{getR()}}
+{\footnotesize\ttfamily int Particle\+::getR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classParticle_a917ce57a6158f0825cd64233b075f1dd}\label{classParticle_a917ce57a6158f0825cd64233b075f1dd} 
+\index{Particle@{Particle}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily QPointF Particle\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classParticle_a7913ec0f59d0215f427ee869816cc390}\label{classParticle_a7913ec0f59d0215f427ee869816cc390} 
+\index{Particle@{Particle}!key\_pressed@{key\_pressed}}
+\index{key\_pressed@{key\_pressed}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{key\_pressed()}{key\_pressed()}}
+{\footnotesize\ttfamily void Particle\+::key\+\_\+pressed (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}\label{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46} 
+\index{Particle@{Particle}!move@{move}}
+\index{move@{move}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily void Particle\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxylink{classParticle_aa9d73f927c8cdf0c09f7520fa3d2ce46}{Particle\+::move} Updates the particle\textquotesingle{}s position every (set in the timer) quant of time and then refreshes the scene. 
+
+\Hypertarget{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0}\label{classParticle_a70adc57286f9c07626fc7a1bb8a51ca0} 
+\index{Particle@{Particle}!operator=@{operator=}}
+\index{operator=@{operator=}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classParticle}{Particle}} \& Particle\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParticle}{Particle}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}\label{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c} 
+\index{Particle@{Particle}!paint@{paint}}
+\index{paint@{paint}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Particle\+::paint (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}}]{option,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classParticle_a1b6b128dd6d6985f7a5fe8a088a0666c}{Particle\+::paint} Function paints a circule with the given position, color and brush. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & \\
+\hline
+{\em option} & \\
+\hline
+{\em widget} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classParticle_aebe022f7284ca86b3357bb7c8f0bfdf9}\label{classParticle_aebe022f7284ca86b3357bb7c8f0bfdf9} 
+\index{Particle@{Particle}!particles\_touch@{particles\_touch}}
+\index{particles\_touch@{particles\_touch}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{particles\_touch()}{particles\_touch()}}
+{\footnotesize\ttfamily bool Particle\+::particles\+\_\+touch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParticle}{Particle}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_a5aa1b197a5e1a0c290aa49937a500dce}\label{classParticle_a5aa1b197a5e1a0c290aa49937a500dce} 
+\index{Particle@{Particle}!resolve\_edge\_collisions@{resolve\_edge\_collisions}}
+\index{resolve\_edge\_collisions@{resolve\_edge\_collisions}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{resolve\_edge\_collisions()}{resolve\_edge\_collisions()}}
+{\footnotesize\ttfamily void Particle\+::resolve\+\_\+edge\+\_\+collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Particle\+::resolve\+\_\+collisions Function handles a partcile hitting the edge of the scene. 
+
+\Hypertarget{classParticle_ad78728caa5b3ae5a5464d52f5ea528eb}\label{classParticle_ad78728caa5b3ae5a5464d52f5ea528eb} 
+\index{Particle@{Particle}!reverse\_velocity@{reverse\_velocity}}
+\index{reverse\_velocity@{reverse\_velocity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{reverse\_velocity()}{reverse\_velocity()}}
+{\footnotesize\ttfamily void Particle\+::reverse\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_abf776cb38b107e79ff0e85d62ecbee22}\label{classParticle_abf776cb38b107e79ff0e85d62ecbee22} 
+\index{Particle@{Particle}!setGravity@{setGravity}}
+\index{setGravity@{setGravity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{setGravity()}{setGravity()}}
+{\footnotesize\ttfamily void Particle\+::set\+Gravity (\begin{DoxyParamCaption}\item[{QPointF}]{new\+Velocity }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_a735f7c3ebcc8912e865adc92f1a65dfb}\label{classParticle_a735f7c3ebcc8912e865adc92f1a65dfb} 
+\index{Particle@{Particle}!setId@{setId}}
+\index{setId@{setId}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Particle\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{new\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_af2717748f2993a434785d0e9f65933dc}\label{classParticle_af2717748f2993a434785d0e9f65933dc} 
+\index{Particle@{Particle}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Particle\+::set\+Position (\begin{DoxyParamCaption}\item[{QPointF}]{new\+Position }\end{DoxyParamCaption})}
+
+\Hypertarget{classParticle_aaa9f8743b97982ca5011d2238a065676}\label{classParticle_aaa9f8743b97982ca5011d2238a065676} 
+\index{Particle@{Particle}!setR@{setR}}
+\index{setR@{setR}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{setR()}{setR()}}
+{\footnotesize\ttfamily void Particle\+::setR (\begin{DoxyParamCaption}\item[{int}]{newR }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle\+::\+Particle} \doxylink{classParticle}{Particle} class generator for random initial velocity and position. 
+
+\Hypertarget{classParticle_ab8d11189a745c9ac1f21618f80028e38}\label{classParticle_ab8d11189a745c9ac1f21618f80028e38} 
+\index{Particle@{Particle}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}}
+{\footnotesize\ttfamily void Particle\+::set\+Velocity (\begin{DoxyParamCaption}\item[{QPointF}]{new\+Velocity }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classParticle_a7078fd92602f86946140aa3c9f8f4c7e}\label{classParticle_a7078fd92602f86946140aa3c9f8f4c7e} 
+\index{Particle@{Particle}!gravity@{gravity}}
+\index{gravity@{gravity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily QPointF Particle\+::gravity\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParticle_a544b202775517f8ba05efcb9e0a21bee}\label{classParticle_a544b202775517f8ba05efcb9e0a21bee} 
+\index{Particle@{Particle}!id@{id}}
+\index{id@{id}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Particle\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParticle_af4e61a7099604b488dd5d934484216f3}\label{classParticle_af4e61a7099604b488dd5d934484216f3} 
+\index{Particle@{Particle}!kolor@{kolor}}
+\index{kolor@{kolor}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{kolor}{kolor}}
+{\footnotesize\ttfamily QColor Particle\+::kolor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+color of the particle 
+
+\Hypertarget{classParticle_a314eeeb537a6dd0b2ddc9fd3924a31e2}\label{classParticle_a314eeeb537a6dd0b2ddc9fd3924a31e2} 
+\index{Particle@{Particle}!position@{position}}
+\index{position@{position}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily QPointF Particle\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+(x,y) position of the middle of the particle 
+
+\Hypertarget{classParticle_ab004141fc93b44474523c389b96a2e57}\label{classParticle_ab004141fc93b44474523c389b96a2e57} 
+\index{Particle@{Particle}!r@{r}}
+\index{r@{r}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int Particle\+::r\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+particle\textquotesingle{}s radius 
+
+\Hypertarget{classParticle_a6ecfc0c018d23b7fdf147804683b1bc9}\label{classParticle_a6ecfc0c018d23b7fdf147804683b1bc9} 
+\index{Particle@{Particle}!timer1@{timer1}}
+\index{timer1@{timer1}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{timer1}{timer1}}
+{\footnotesize\ttfamily QTimer\texorpdfstring{$\ast$}{*} Particle\+::timer1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+timer to refresh particle\textquotesingle{}s parameters every quant of time 
+
+\Hypertarget{classParticle_a4a834a668fb904a857f0545e557e8062}\label{classParticle_a4a834a668fb904a857f0545e557e8062} 
+\index{Particle@{Particle}!velocity@{velocity}}
+\index{velocity@{velocity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily QPointF Particle\+::velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+(x,y) velocity of the middle of the particle 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{particle_8h}{particle.\+h}}\item 
+\mbox{\hyperlink{particle_8cpp}{particle.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,121 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{classMainWindow}{}\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+The \doxylink{classMainWindow}{Main\+Window} class Represents the window for the scene.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_aad75236c74a5c340c3e18749a9b5eb4f}{resize\+Event}} (QResize\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{classMainWindow_aefc429a6f3efe0c6acf62ca115aba3c6}{on\+\_\+resize\+Event}} (QResize\+Event \texorpdfstring{$\ast$}{*}event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Main\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMainWindow_a35466a70ed47252a0191168126a352a5}{ui}}
+\item 
+QGraphics\+Scene \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMainWindow_a51ac2b126495216832501cea3929c6f6}{scene}}
+\item 
+QGraphics\+View \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMainWindow_a6e33bc418ea3e6d93b3021933bfa3baa}{view}}
+\item 
+\mbox{\hyperlink{classLiquidSimulation}{Liquid\+Simulation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMainWindow_a399050fe3bb5218fe00c5de9380d895a}{simulation}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classMainWindow}{Main\+Window} class Represents the window for the scene. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} add all the simulation particles to the scene\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMainWindow_aefc429a6f3efe0c6acf62ca115aba3c6}\label{classMainWindow_aefc429a6f3efe0c6acf62ca115aba3c6} 
+\index{MainWindow@{MainWindow}!on\_resizeEvent@{on\_resizeEvent}}
+\index{on\_resizeEvent@{on\_resizeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_resizeEvent()}{on\_resizeEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classMainWindow_aad75236c74a5c340c3e18749a9b5eb4f}\label{classMainWindow_aad75236c74a5c340c3e18749a9b5eb4f} 
+\index{MainWindow@{MainWindow}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMainWindow_a51ac2b126495216832501cea3929c6f6}\label{classMainWindow_a51ac2b126495216832501cea3929c6f6} 
+\index{MainWindow@{MainWindow}!scene@{scene}}
+\index{scene@{scene}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily QGraphics\+Scene\texorpdfstring{$\ast$}{*} Main\+Window\+::scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMainWindow_a399050fe3bb5218fe00c5de9380d895a}\label{classMainWindow_a399050fe3bb5218fe00c5de9380d895a} 
+\index{MainWindow@{MainWindow}!simulation@{simulation}}
+\index{simulation@{simulation}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{simulation}{simulation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLiquidSimulation}{Liquid\+Simulation}}\texorpdfstring{$\ast$}{*} Main\+Window\+::simulation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMainWindow_a35466a70ed47252a0191168126a352a5}\label{classMainWindow_a35466a70ed47252a0191168126a352a5} 
+\index{MainWindow@{MainWindow}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Main\+Window\texorpdfstring{$\ast$}{*} Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMainWindow_a6e33bc418ea3e6d93b3021933bfa3baa}\label{classMainWindow_a6e33bc418ea3e6d93b3021933bfa3baa} 
+\index{MainWindow@{MainWindow}!view@{view}}
+\index{view@{view}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily QGraphics\+View\texorpdfstring{$\ast$}{*} Main\+Window\+::view\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

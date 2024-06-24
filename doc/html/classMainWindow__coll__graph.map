@@ -1,0 +1,12 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="Node000001" title="The MainWindow class Represents the window for the scene." alt="" coords="31,256,138,281"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,168,121,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,206,84,255,79,256,67,207"/>
+<area shape="rect" id="Node000003" href="$classLiquidSimulation.html" title="Klasa symulująca ciecz za pomocą cząsteczek." alt="" coords="146,168,277,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,203,103,258,100,254,181,199"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="159,5,234,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,44,213,168,208,168,196,45"/>
+<area shape="rect" id="Node000005" href="$classSerialPort.html" title=" " alt="" coords="218,80,303,105"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="218,40,252,78,248,81,214,43"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="250,119,221,169,216,166,245,116"/>
+</map>

@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "liquidsimulation.h"
-#include "serialport.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +30,5 @@ private:
     QGraphicsScene * scene;
     QGraphicsView * view;
     LiquidSimulation * simulation;
-    SerialPort * serialPort;
 };
 #endif // MAINWINDOW_H

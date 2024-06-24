@@ -5,6 +5,7 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QDebug>
+#include <QTimer>
 
 class SerialPort : public QObject
 {
@@ -13,7 +14,8 @@ class SerialPort : public QObject
 public:
     SerialPort(QObject * parent = nullptr);
     ~SerialPort();
-
+signals:
+    void dataReceived(const QByteArray &data);
 private slots:
     void handleReadyRead();
 };
